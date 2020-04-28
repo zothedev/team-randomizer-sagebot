@@ -12,6 +12,8 @@ async def on_ready():
     print('Ready')
     await client.change_presence(activity = discord.Game("use .gen to begin!"))
 
+
+
 @client.command(name="gen")
 async def VoiceChannel(ctx):
     VoiceChannel = ctx.author.voice.channel
@@ -51,9 +53,16 @@ async def VoiceChannel(ctx):
     team1f = sep.join(team1)
     memsf = sep.join(mems)
       
-    await ctx.send (f">>> **Team 1:**\n{team1f}\n\n**Team 2:**\n{memsf}")
-  
+    #await ctx.send (f">>> **Team 1:**\n{team1f}\n\n**Team 2:**\n{memsf}")
+    embed = discord.Embed(
+        title = "Team Randomizer",
+        colour = discord.Colour.green()
+        )
+
+    embed.set_footer(text='powered by Slips#9355')
+    embed.set_thumbnail(url='https://bit.ly/2VLyRFa')
+    embed.add_field(name='Team 1', value = team1f, inline=False)
+    embed.add_field(name='Team 2', value = memsf, inline=False)
+    await ctx.send(embed=embed)
     
-    
-        
-client.run('NzAzODMxMDE3MDQ3MzI2NzIw.XqgHxA.UbFajkj6Ib82oHyDlkrAUwy4TjE')
+client.run(os.environ['BOT_TOKEN'])
