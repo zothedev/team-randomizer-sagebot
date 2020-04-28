@@ -65,4 +65,4 @@ async def VoiceChannel(ctx):
     embed.add_field(name='Team 2', value = memsf, inline=False)
     await ctx.send(embed=embed)
     
-client.run(os.environ['BOT_TOKEN'])
+client.run('NzAzODMxMDE3MDQ3MzI2NzIw.XqgHxA.UbFajkj6Ib82oHyDlkrAUwy4TjE')
