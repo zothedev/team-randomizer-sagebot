@@ -20,7 +20,7 @@ async def on_message(message):
 
     if message.content.startswith('hi'):
         msg = 'hi {0.author.mention}'.format(message)
-        await client.send_message(message.channel, msg)
+        await client.send(message.channel, msg)
 
 @client.event
 async def on_message(message):
@@ -30,7 +30,7 @@ async def on_message(message):
 
     if message.content.startswith('hey'):
         msg = 'hey {0.author.mention}'.format(message)
-        await client.send_message(message.channel, msg)
+        await client.send(message.channel, msg)
 
 @client.event
 async def on_message(message):
@@ -40,7 +40,7 @@ async def on_message(message):
 
     if message.content.startswith('hello'):
         msg = 'hello {0.author.mention}'.format(message)
-        await client.send_message(message.channel, msg)
+        await client.send(message.channel, msg)
 
 @client.command(name="gen")
 async def VoiceChannel(ctx):
